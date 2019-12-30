@@ -3,21 +3,30 @@
 const express = require('express');
 
 const app = express();
+
+require('dotenv').config();
 const PORT = process.env.PORT || 3000;
+app.use(express.urlencoded());
 
-app.use(express.urlencoded({extended: true}));
-app.use(express.static('./public'));
+app.use(express.static('public'));
 
-app.post('/contact', (request, response) => {
-  console.log(request.body);
-  response.sendFile('./thanks.html', {root: './public'});
+app.get('/', (req,res) => {
+    res.status(200).send('We are alive Class!!!');
 });
 
-app.get('/contact', (request, response) => {
-  console.log(request.query);
-  response.sendFile('./thanks.html', {root: './public'});
+
+app.get('/contact', (req,res) => {
+    res.sendFile('./index.html', {root: './public'});
 });
 
-app.get('*', (request, response) => response.status(404).send('This route does not exist'));
+app.post('/contact', (req,res) => {
+    console.log(req.body);
+    res.sendFile('./thanks.html', {root: './public'});
+});
 
-app.listen(PORT, () => console.log(`Listening on ${PORT}`));
+app.get('*', (req,res) => {
+    res.status(404).send('Not Found');
+});
+app.listen(PORT, ()=> {
+    console.log('Working!!!!!!!');
+});

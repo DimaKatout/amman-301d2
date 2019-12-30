@@ -1,5 +1,5 @@
 {
-  "name": "templating",
+  "name": "forms",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -7,11 +7,12 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Ahmad",
+  "license": "MIT",
   "dependencies": {
-    "ejs": "^2.6.1",
-    "express": "^4.16.3"
+    "dotenv": "^8.2.0",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "superagent": "^5.1.3"
   }
 }

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>books</title>
+</head>
+
+<body>
+    <h1>BOOKS</h1>
+    <ul>
+        <% books.forEach(book => { %>
+            <li> 
+                <p><%= book.volumeInfo.title %></p>
+            </li>
+        <% }) %>
+    </ul>
+</body>
+
+</html>
