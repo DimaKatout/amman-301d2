@@ -1,5 +1,6 @@
-DROP TABLE IF EXISTS tasks;
-CREATE TABLE tasks (
+DROP TABLE IF EXISTS Todos;
+
+CREATE TABLE Todos(
   id SERIAL PRIMARY KEY,
   title VARCHAR(255),
   description TEXT,
@@ -9,5 +10,5 @@ CREATE TABLE tasks (
   due DATE NOT NULL DEFAULT NOW()
 );
 
-INSERT INTO tasks (title, contact, status, category, description) 
-VALUES('feed Demi','Sam','do immediately after getting home','pets','Demi is hungry');
+INSERT INTO Todos (title, contact, status, category, description) 
+VALUES('Each Shawerma','Ahmad','Do it at 1:00','Food','I am so hungry');
