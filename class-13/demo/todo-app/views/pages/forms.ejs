@@ -1,0 +1,9 @@
+<% let action =  formAction === 'update' ? `/update/${task.id}?_method=PUT` : '/add' %>
+<form action="<%= action %>" method="POST">
+    <input type="text" name="title" value="<%= task.title %>">
+    <textarea name="description" cols="30" rows="10" > <%= task.description %></textarea>
+    <input type="text" name="contact" value="<%= task.contact %>">
+    <input type="text" name="status" value="<%= task.status %>">
+    <input type="text" name="category" value="<%= task.category %>">
+    <button type="submit"> <%- formAction==='update' ? "Update" : "Add" %> </button>
+</form>
